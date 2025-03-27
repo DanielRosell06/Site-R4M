@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R4M Polidores - Massas para Polimento e Acabamento Industrial</title>
     <link rel="stylesheet" href="style/home-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="scripts/product-section-animation.js" defer></script>
     <script src="scripts/navbar-control.js" defer></script>
 </head>
@@ -33,9 +34,25 @@
                 necessidades específicas.</p>
             <a href="produto.html" class="banner-btn">Conheça nossos produtos</a>
         </div>
-        <img src="/images/imagem-publica-03.jpg" alt="Polimento Industrial" class="banner-image">
+        <div class="banner-ver-mais">
+            <h1>Veja mais</h1>
+            <p><i class="fas fa-angle-down"></i></p>
+        </div>
         <div class="banner-accent"></div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bannerVerMais = document.querySelector('.banner-ver-mais');
+            const sobreSecao = document.getElementById('product-showcase');
+
+            bannerVerMais.addEventListener('click', () => {
+                sobreSecao.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 
     <div id="product-showcase">
@@ -221,7 +238,7 @@
                     excepcionais.</p>
             </div>
             <div class="sobre-imagem">
-                <img src="/api/placeholder/500/400" alt="R4M Polidores Fábrica">
+                <img src="/images/local-empresa.png" alt="R4M Polidores Fábrica">
             </div>
         </div>
     </div>
@@ -272,7 +289,6 @@
                         permitindo competir em mercados internacionais com qualidade premium."
                     </blockquote>
                     <div class="cliente-info">
-                        <img src="/images/cliente-metalurgica.jpg" alt="Metalúrgica ABC">
                         <div>
                             <h4>Metalúrgica ABC</h4>
                             <span>Indústria Automotiva</span>
@@ -288,7 +304,6 @@
                         de polimento e um acabamento consistente em larga escala."
                     </blockquote>
                     <div class="cliente-info">
-                        <img src="/images/cliente-aeronautica.jpg" alt="AeroParts">
                         <div>
                             <h4>AeroParts</h4>
                             <span>Componentes Aeronáuticos</span>
@@ -301,12 +316,6 @@
 
     <div id="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>Sobre Nós</h3>
-                <p>A R4M Polidores é especializada em massas para polimento e acabamento industrial, oferecendo
-                    soluções
-                    personalizadas e de alta qualidade para empresas que buscam excelência em seus processos.</p>
-            </div>
 
             <div class="footer-section">
                 <h3>Links Rápidos</h3>

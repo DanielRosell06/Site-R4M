@@ -1,6 +1,7 @@
 /* Variáveis com as cores da marca - refinadas */
 :root {
     --laranja: #DE5900;
+    --laranja-escuro: #a54200;
     --laranja-suave: rgba(222, 89, 0, 0.1);
     --preto: #131313;
     --branco: #f0f0f0;
@@ -194,6 +195,30 @@ body {
     opacity: 0.85;
 }
 
+.banner-ver-mais{
+    display: flex-column;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 40%;
+    right: 40%;
+    z-index: 10;
+    align-items: center;
+    gap: 10px;
+    color: var(--branco);
+    font-size: 0.6rem;
+}
+
+.banner-ver-mais:hover{
+    cursor: pointer;
+}
+
+.banner-ver-mais i {
+    font-size: 3.0rem;
+    color: var(--laranja);
+}
+
 .banner-accent {
     position: absolute;
     bottom: 0;
@@ -255,7 +280,7 @@ body {
 }
 
 .showcase-btn:hover {
-    background-color: #0056b3;
+    background-color: var(--laranja-escuro);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
@@ -396,22 +421,18 @@ body {
 
 .sobre-imagem {
     flex: 1;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.sobre-imagem:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
 }
 
 .sobre-imagem img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.sobre-imagem img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 768px) {
