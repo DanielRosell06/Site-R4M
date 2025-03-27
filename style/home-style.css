@@ -3,11 +3,12 @@
     --laranja: #DE5900;
     --laranja-suave: rgba(222, 89, 0, 0.1);
     --preto: #131313;
-    --branco: #FAFAFA;
+    --branco: #f0f0f0;
     --amarelo: #FFFB00;
     --vermelho: #FF0000;
     --cinza: #333;
     --cinza-claro: #eaeaea;
+    --navbar-height: 80px;
 }
 
 * {
@@ -25,18 +26,23 @@ body {
 
 /* Header e Navegação */
 #topo {
-    background-color: var(--branco);
+    background-color: transparent;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    height: 80px;
+    height: var(--navbar-height);
     transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+#topo.scrolled {
+    background-color: var(--branco);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07);
 }
 
 .logo {
@@ -50,6 +56,20 @@ body {
     font-size: 1.8rem;
     font-weight: 700;
     margin-left: 10px;
+}
+
+.logo-text {
+    color: var(--branco) !important; /* Logo branco no topo */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#topo.scrolled .logo-text {
+    color: var(--preto) !important; /* Volta ao normal */
+    text-shadow: none;
+}
+
+#topo.scrolled .logo-text span {
+    color: var(--laranja) !important;
 }
 
 .logo-text span {
@@ -77,6 +97,13 @@ body {
     padding: 30px 0;
     position: relative;
     transition: all 0.3s ease;
+    color: var(--branco); /* Texto branco quando navbar transparente */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#topo.scrolled #menu ul li a {
+    color: var(--cinza); /* Volta à cor original quando tem fundo */
+    text-shadow: none;
 }
 
 #menu ul li a:hover {
@@ -100,9 +127,8 @@ body {
 
 /* Banner */
 #banner {
-    margin-top: 80px;
+    height: 100vh;
     position: relative;
-    height: 500px;
     background: linear-gradient(45deg, var(--preto) 0%, #2a2a2a 100%);
     overflow: hidden;
 }
@@ -115,13 +141,15 @@ body {
     color: var(--branco);
     width: 50%;
     z-index: 10;
+    padding: 20px 0;
 }
 
 .banner-content h1 {
-    font-size: 2.8rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
     line-height: 1.2;
+    font-size: 3.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .banner-content h1 span {
@@ -129,10 +157,11 @@ body {
 }
 
 .banner-content p {
-    font-size: 1.1rem;
     margin-bottom: 2rem;
     line-height: 1.8;
     max-width: 80%;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .banner-btn {
@@ -189,7 +218,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.082);
+    background: rgba(241, 241, 241, 0.473);
 }
 
 .showcase-content {
@@ -264,6 +293,7 @@ body {
     width: 100vw;
     display: flex;
     margin: 1.5rem 0;
+    background-color: var(--brancowhite);
 }
 
 .product-line {
@@ -333,6 +363,70 @@ body {
     }
 }
 
+/* Sobre Section */
+#sobre-secao {
+    background-color: var(--branco);
+    padding: 5rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sobre-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.sobre-texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sobre-texto p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.sobre-imagem {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sobre-imagem:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .sobre-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-imagem {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+
 /* Serviços */
 #boxlin2 {
     display: flex;
@@ -340,7 +434,20 @@ body {
     flex-wrap: wrap;
     padding: 5rem 5%;
     margin: 0 auto;
-    background-color: #f8f8f8;
+    background: 
+        linear-gradient(
+            15deg, 
+            rgba(222, 89, 0, 0.03) 0%, 
+            rgba(255, 255, 255, 0.1) 100%
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 2px,
+            rgba(222, 89, 0, 0.205) 3px,
+            rgba(222, 89, 0, 0.05) 4px
+        ),
+        var(--branco);
     position: relative;
     z-index: 2;
 }
@@ -420,6 +527,108 @@ h6 {
     color: #666;
     line-height: 1.8;
     font-size: 0.95rem;
+}
+
+/* Estilos inovadores para a seção */
+#clientes-section {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.depoimentos-carrossel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 5%;
+}
+
+.depoimento-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(222, 89, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(222, 89, 0, 0.1);
+}
+
+.depoimento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(222, 89, 0, 0.12);
+}
+
+.quote-icon {
+    position: absolute;
+    top: -25px;
+    left: 20px;
+    font-size: 4rem;
+    color: var(--laranja);
+    opacity: 0.3;
+}
+
+blockquote {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--cinza);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    position: relative;
+    padding-left: 2rem;
+}
+
+blockquote::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: var(--laranja);
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Efeito de fading nas bordas */
+.clientes-marquee::before,
+.clientes-marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    background: linear-gradient(90deg, var(--branco), transparent);
+}
+
+.clientes-marquee::before {
+    left: 0;
+}
+
+.clientes-marquee::after {
+    right: 0;
+    background: linear-gradient(-90deg, var(--branco), transparent);
+}
+
+@media (max-width: 768px) {
+    .depoimentos-carrossel {
+        grid-template-columns: 1fr;
+    }
+    
+    .marquee-inner img {
+        height: 30px;
+    }
+    
+    blockquote {
+        padding-left: 1rem;
+        font-size: 1rem;
+    }
 }
 
 /* Footer */
