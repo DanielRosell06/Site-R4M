@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style/produtos-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="scripts/navbar-control.js" defer></script>
+    <script src="scripts/produtos-search-input.js" defer></script>
+    <script src="scripts/produtos-ver-detalhes.js" defer></script>
 </head>
 
 <body>
@@ -46,27 +48,45 @@
         <div class="scroll-divider"></div>
 
         <section class="categorias-produtos">
+            <div class="produto-nao-encontrado">
+                <p>Nenhum produto encontrado</p>
+            </div>
+
             <!-- Sebos -->
             <div class="categoria">
                 <h2 class="categoria-titulo">Sebos para Polimento</h2>
-                <div class="produtos-grid">
-                    <div class="produto-card">
-                        <img src="/images/produtosSebo.jpg" alt="Sebo Amarelo">
-                        <h3>Sebo Amarelo</h3>
-                        <p>Formulação tradicional para desbaste inicial</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                <div class="produtos-container">
+                    <div class="produtos-lista">
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Sebo Amarelo</h3>
+                                    <p>Formulação tradicional para desbaste inicial</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Sebo Composto</h3>
+                                    <p>Mistura especial para alta produtividade</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Sebo Repuxo</h3>
+                                    <p>Para acabamento em superfícies irregulares</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosSebo.jpg" alt="Sebo Composto">
-                        <h3>Sebo Composto</h3>
-                        <p>Mistura especial para alta produtividade</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosSebo.jpg" alt="Sebo Repuxo">
-                        <h3>Sebo Repuxo</h3>
-                        <p>Para acabamento em superfícies irregulares</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                    <div class="produtos-imagem">
+                        <img src="/images/produtosSebo.jpg" alt="Sebos para Polimento">
                     </div>
                 </div>
             </div>
@@ -74,18 +94,29 @@
             <!-- Polipower -->
             <div class="categoria">
                 <h2 class="categoria-titulo">Linha Polipower</h2>
-                <div class="produtos-grid">
-                    <div class="produto-card">
-                        <img src="/images/produtosAltaBrava.jpg" alt="Polipower">
-                        <h3>Polipower</h3>
-                        <p>Corte agressivo com baixo consumo</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                <div class="produtos-container">
+                    <div class="produtos-lista">
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Polipower</h3>
+                                    <p>Corte agressivo com baixo consumo</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Polipower G</h3>
+                                    <p>Versão granulada para metais duros</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosAltaBrava.jpg" alt="Polipower G">
-                        <h3>Polipower G</h3>
-                        <p>Versão granulada para metais duros</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                    <div class="produtos-imagem">
+                        <img src="/images/produtosAltaBrava.jpg" alt="Linha Polipower">
                     </div>
                 </div>
             </div>
@@ -93,24 +124,38 @@
             <!-- Despol -->
             <div class="categoria">
                 <h2 class="categoria-titulo">Despol - Desbaste</h2>
-                <div class="produtos-grid">
-                    <div class="produto-card">
-                        <img src="/images/produtosDesbaste.jpg" alt="Despol Super Corte">
-                        <h3>Despol Super Corte</h3>
-                        <p>Remoção rápida de imperfeições</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                <div class="produtos-container">
+                    <div class="produtos-lista">
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Despol Super Corte</h3>
+                                    <p>Remoção rápida de imperfeições</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Despol N1</h3>
+                                    <p>Desbaste médio com acabamento uniforme</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Despol 4 UMD</h3>
+                                    <p>Otimizado para máquinas automáticas</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosDesbaste.jpg" alt="Despol N1">
-                        <h3>Despol N1</h3>
-                        <p>Desbaste médio com acabamento uniforme</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosDesbaste.jpg" alt="Despol 4 UMD">
-                        <h3>Despol 4 UMD</h3>
-                        <p>Otimizado para máquinas automáticas</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                    <div class="produtos-imagem">
+                        <img src="/images/produtosDesbaste.jpg" alt="Despol - Desbaste">
                     </div>
                 </div>
             </div>
@@ -118,24 +163,38 @@
             <!-- Polipol -->
             <div class="categoria">
                 <h2 class="categoria-titulo">Polipol - Acabamento</h2>
-                <div class="produtos-grid">
-                    <div class="produto-card">
-                        <img src="/images/produtosBrilho.jpg" alt="Polipol UMD">
-                        <h3>Polipol UMD</h3>
-                        <p>Para uso em máquinas de disco único</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                <div class="produtos-container">
+                    <div class="produtos-lista">
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Polipol UMD</h3>
+                                    <p>Para uso em máquinas de disco único</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Polipol 2702</h3>
+                                    <p>Brilho intenso com proteção anti-oxidação</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Polipol Premium</h3>
+                                    <p>Acabamento espelhado profissional</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosBrilho.jpg" alt="Polipol 2702">
-                        <h3>Polipol 2702</h3>
-                        <p>Brilho intenso com proteção anti-oxidação</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosBrilho.jpg" alt="Polipol Premium">
-                        <h3>Polipol Premium</h3>
-                        <p>Acabamento espelhado profissional</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                    <div class="produtos-imagem">
+                        <img src="/images/produtosBrilho.jpg" alt="Polipol - Acabamento">
                     </div>
                 </div>
             </div>
@@ -143,30 +202,47 @@
             <!-- Luspol -->
             <div class="categoria">
                 <h2 class="categoria-titulo">Luspol - Lustro Final</h2>
-                <div class="produtos-grid">
-                    <div class="produto-card">
-                        <img src="/images/produtosLustro.jpg" alt="Luspol 520">
-                        <h3>Luspol 520</h3>
-                        <p>Lustro rápido com durabilidade extendida</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                <div class="produtos-container">
+                    <div class="produtos-lista">
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Luspol 520</h3>
+                                    <p>Lustro rápido com durabilidade extendida</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Luspol Verde N 20</h3>
+                                    <p>Formulação ecológica não abrasiva</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Vermelha High Gloss</h3>
+                                    <p>Brilho premium para metais nobres</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Luspol N</h3>
+                                    <p>Versão neutra para diversos materiais</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosLustro.jpg" alt="Luspol Verde N 20">
-                        <h3>Luspol Verde N 20</h3>
-                        <p>Formulação ecológica não abrasiva</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosLustro.jpg" alt="Vermelha High Gloss">
-                        <h3>Vermelha High Gloss</h3>
-                        <p>Brilho premium para metais nobres</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosLustro.jpg" alt="Luspol N">
-                        <h3>Luspol N</h3>
-                        <p>Versão neutra para diversos materiais</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                    <div class="produtos-imagem">
+                        <img src="/images/produtosLustro.jpg" alt="Luspol - Lustro Final">
                     </div>
                 </div>
             </div>
@@ -174,30 +250,47 @@
             <!-- Liquipol -->
             <div class="categoria">
                 <h2 class="categoria-titulo">Liquipol - Massas Líquidas</h2>
-                <div class="produtos-grid">
-                    <div class="produto-card">
-                        <img src="/images/produtosMassaLiquida.jpg" alt="Liquipol Plus 1418">
-                        <h3>Liquipol Plus 1418</h3>
-                        <p>Formulação concentrada para alto rendimento</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                <div class="produtos-container">
+                    <div class="produtos-lista">
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Liquipol Plus 1418</h3>
+                                    <p>Formulação concentrada para alto rendimento</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Liquipol 1618</h3>
+                                    <p>Viscosidade controlada para aplicação precisa</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Liquipol 1407</h3>
+                                    <p>Secagem rápida em ambientes industriais</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Liquipol EXN2</h3>
+                                    <p>Resistente a altas temperaturas</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosMassaLiquida.jpg" alt="Liquipol 1618">
-                        <h3>Liquipol 1618</h3>
-                        <p>Viscosidade controlada para aplicação precisa</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosMassaLiquida.jpg" alt="Liquipol 1407">
-                        <h3>Liquipol 1407</h3>
-                        <p>Secagem rápida em ambientes industriais</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosMassaLiquida.jpg" alt="Liquipol EXN2">
-                        <h3>Liquipol EXN2</h3>
-                        <p>Resistente a altas temperaturas</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                    <div class="produtos-imagem">
+                        <img src="/images/produtosMassaLiquida.jpg" alt="Liquipol - Massas Líquidas">
                     </div>
                 </div>
             </div>
@@ -205,36 +298,56 @@
             <!-- Discos -->
             <div class="categoria">
                 <h2 class="categoria-titulo">Discos Plissados</h2>
-                <div class="produtos-grid">
-                    <div class="produto-card">
-                        <img src="/images/produtosDiscos.jpg" alt="Disco Plissado Rosa">
-                        <h3>Disco Plissado Rosa</h3>
-                        <p>Algodão reforçado para desbaste pesado</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                <div class="produtos-container">
+                    <div class="produtos-lista">
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Disco Plissado Rosa</h3>
+                                    <p>Algodão reforçado para desbaste pesado</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Disco Plissado Branco</h3>
+                                    <p>Acabamento fino em metais não ferrosos</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Disco Plissado Azul</h3>
+                                    <p>Resistente a altas rotações</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Disco Plissado Verde</h3>
+                                    <p>Para uso com compostos líquidos</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Disco Plissado Amarelo</h3>
+                                    <p>Durabilidade extendida para produção contínua</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosDiscos.jpg" alt="Disco Plissado Branco">
-                        <h3>Disco Plissado Branco</h3>
-                        <p>Acabamento fino em metais não ferrosos</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosDiscos.jpg" alt="Disco Plissado Azul">
-                        <h3>Disco Plissado Azul</h3>
-                        <p>Resistente a altas rotações</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosDiscos.jpg" alt="Disco Plissado Verde">
-                        <h3>Disco Plissado Verde</h3>
-                        <p>Para uso com compostos líquidos</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosDiscos.jpg" alt="Disco Plissado Amarelo">
-                        <h3>Disco Plissado Amarelo</h3>
-                        <p>Durabilidade extendida para produção contínua</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                    <div class="produtos-imagem">
+                        <img src="/images/produtosDiscos.jpg" alt="Discos Plissados">
                     </div>
                 </div>
             </div>
@@ -242,24 +355,38 @@
             <!-- Acessórios -->
             <div class="categoria">
                 <h2 class="categoria-titulo">Acessórios</h2>
-                <div class="produtos-grid">
-                    <div class="produto-card">
-                        <img src="/images/produtosComplementos.jpg" alt="Cola Fria">
-                        <h3>Cola Fria</h3>
-                        <p>Adesivo instantâneo para fixação de discos</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                <div class="produtos-container">
+                    <div class="produtos-lista">
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Cola Fria</h3>
+                                    <p>Adesivo instantâneo para fixação de discos</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>TCL</h3>
+                                    <p>Composto lubrificante-refrigerante</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                        <div class="produto-item">
+                            <div class="produto-head">
+                                <div class="produto-info">
+                                    <h3>Composto</h3>
+                                    <p>Mistura pronta para acabamento final</p>
+                                </div>
+                                <a href="#" class="detalhes-btn">Ver detalhes <i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosComplementos.jpg" alt="TCL">
-                        <h3>TCL</h3>
-                        <p>Composto lubrificante-refrigerante</p>
-                        <a href="#" class="produto-btn">Especificações</a>
-                    </div>
-                    <div class="produto-card">
-                        <img src="/images/produtosComplementos.jpg" alt="Composto">
-                        <h3>Composto</h3>
-                        <p>Mistura pronta para acabamento final</p>
-                        <a href="#" class="produto-btn">Especificações</a>
+                    <div class="produtos-imagem">
+                        <img src="/images/produtosComplementos.jpg" alt="Acessórios">
                     </div>
                 </div>
             </div>
@@ -298,69 +425,6 @@
         </div>
         <p class="textFoo">R4M Polidores - Todos os Direitos Reservados - Copyright 2025</p>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const searchInput = document.getElementById('search-input');
-            const searchButton = document.getElementById('search-button');
-            const produtoCards = document.querySelectorAll('.produto-card');
-            const categorias = document.querySelectorAll('.categoria');
-
-            function performSearch() {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-
-                if (searchTerm === '') {
-                    // Se a pesquisa estiver vazia, mostrar todos os produtos
-                    produtoCards.forEach(card => {
-                        card.style.display = 'flex';
-                    });
-                    categorias.forEach(categoria => {
-                        categoria.style.display = 'block';
-                    });
-                    return;
-                }
-
-                // Para cada categoria, verificar se há produtos correspondentes
-                categorias.forEach(categoria => {
-                    const categoriaProdutos = categoria.querySelectorAll('.produto-card');
-                    let temProdutosVisiveis = false;
-
-                    categoriaProdutos.forEach(card => {
-                        const titulo = card.querySelector('h3').textContent.toLowerCase();
-                        const descricao = card.querySelector('p').textContent.toLowerCase();
-
-                        if (titulo.includes(searchTerm) || descricao.includes(searchTerm)) {
-                            card.style.display = 'flex';
-                            temProdutosVisiveis = true;
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-
-                    // Mostrar ou ocultar a categoria inteira
-                    categoria.style.display = temProdutosVisiveis ? 'block' : 'none';
-                });
-            }
-
-            // Evento de clique no botão de pesquisa
-            searchInput.addEventListener('input', performSearch);
-            searchButton.addEventListener('click', performSearch);
-
-            // Evento de pressionar Enter no campo de pesquisa
-            searchInput.addEventListener('keypress', function (e) {
-                if (e.key === 'Enter') {
-                    performSearch();
-                }
-            });
-
-            // Evento de limpar a pesquisa quando o campo ficar vazio
-            searchInput.addEventListener('input', function () {
-                if (this.value === '') {
-                    performSearch();
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
