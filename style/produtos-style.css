@@ -12,11 +12,14 @@
     height: 500px;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
+    padding: 2rem 1rem;
 }
+
 
 .produtos-header::after {
     content: '';
@@ -33,6 +36,9 @@
     padding: 2rem;
     max-width: 800px;
     z-index: 1;
+}
+.header-content{
+    margin-top: 2rem;
 }
 
 .produtos-header h1 {
@@ -261,13 +267,76 @@
 
 /* Adicionar ao arquivo produtos-style.css */
 
+/* Ajuste para o container de pesquisa */
 .search-container {
-    width: 30%;
+    width: 100%;
+    max-width: 500px;
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     position: relative;
     z-index: 10;
+}
+
+/* Ajustes para responsividade em dispositivos médios */
+@media (max-width: 991px) {
+    .produtos-header {
+        height: auto;
+        min-height: 400px;
+        padding-bottom: 80px; /* Espaço para o elemento diagonal */
+    }
+    
+    .search-container {
+        max-width: 80%;
+        margin-top: 1.5rem;
+    }
+}
+
+/* Ajustes para dispositivos pequenos/celulares */
+@media (max-width: 768px) {
+    .produtos-header {
+        min-height: 350px;
+        padding-top: 1.5rem;
+        padding-bottom: 70px;
+    }
+    
+    .header-content {
+        margin-bottom: 1rem;
+    }
+    
+    .search-container {
+        max-width: 90%;
+        order: 2; /* Garante que fique abaixo do texto */
+        margin-top: 1.5rem;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+}
+
+/* Ajustes para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .produtos-header {
+        min-height: 300px;
+        padding-bottom: 60px;
+    }
+    
+    .search-container {
+        max-width: 100%;
+        padding: 0 15px;
+        margin-top: 1rem;
+    }
+    
+    #search-input {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    #search-button {
+        width: 50px;
+    }
 }
 
 .search-box {
@@ -395,6 +464,7 @@
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
     transform: all ease 0.3s;
+    display: block;
 }
 
 .produto-item:hover {
@@ -460,13 +530,7 @@
     }
 }
 
-@media (max-width: 768px) {
-    .produto-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    
+@media (max-width: 768px) {    
     .detalhes-btn {
         align-self: flex-end;
     }
@@ -578,6 +642,7 @@
 }
 
 .produto-head{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
