@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="detalhes-col">
                         <h4>Informações Adicionais</h4>
                         <p>Para informações detalhadas sobre o produto ${nomeProduto}, entre em contato com nossa equipe de vendas.</p>
-                        <button class="solicitar-btn">Solicitar Orçamento</button>
+                        <button  class="solicitar-btn">Solicitar Orçamento</button>
                     </div>
                 </div>
             `
@@ -122,12 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target && e.target.classList.contains('solicitar-btn')) {
             e.preventDefault();
             
-            // Obtém o nome do produto
-            const produtoItem = e.target.closest('.produto-item');
-            const nomeProduto = produtoItem.querySelector('h3').textContent;
-            
-            // Aqui você pode implementar um modal ou redirecionamento
-            alert(`Solicitação de orçamento para ${nomeProduto} enviada! Nossa equipe entrará em contato.`);
+            // Redireciona para a página de contato
+            window.location.href = 'contato.html';
         }
     });
 });
