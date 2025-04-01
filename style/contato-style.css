@@ -1,0 +1,429 @@
+/* ESTILOS ESPECÍFICOS PARA PÁGINA DE CONTATO */
+#contato-page {
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.contato-header {
+    background: #131313;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 2rem 1rem;
+}
+
+.contato-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to right bottom, transparent 49%, var(--laranja) 50%);
+}
+
+.contato-header .header-content {
+    color: var(--branco);
+    padding: 2rem;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.contato-header h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.contato-header h1 span {
+    color: var(--laranja);
+    position: relative;
+    display: inline-block;
+}
+
+.contato-header h1 span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--laranja);
+    bottom: -5px;
+    left: 0;
+}
+
+.contato-header p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.contato-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 5% 2rem;
+}
+
+.contato-info-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contato-info, .contato-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contato-info h2, .contato-form h2 {
+    font-size: 2.2rem;
+    color: var(--preto);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.contato-info h2::after, .contato-form h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: var(--laranja);
+}
+
+.contato-info p {
+    color: var(--cinza);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    border-left: 3px solid var(--laranja);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.info-card .icon {
+    background-color: var(--laranja);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.info-content h3 {
+    color: var(--preto);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.info-content p {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.social-media {
+    margin-top: 2rem;
+}
+
+.social-media h3 {
+    color: var(--preto);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #f8f8f8;
+    color: var(--laranja);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--laranja);
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* Estilos para o formulário */
+#formulario-contato {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--preto);
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--laranja);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.2);
+}
+
+.submit-btn {
+    background-color: var(--laranja);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    min-width: 200px;
+}
+
+.submit-btn:hover {
+    background-color: #e07800;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(224, 120, 0, 0.3);
+}
+
+/* Estilos para a seção de localização */
+.localizacao-section {
+    background-color: #f8f8f8;
+    padding: 4rem 5%;
+}
+
+.localizacao-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+}
+
+.localizacao-info, .mapa-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.localizacao-info h2 {
+    font-size: 2.2rem;
+    color: var(--preto);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.localizacao-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: var(--laranja);
+}
+
+.localizacao-info p {
+    color: var(--cinza);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.endereco {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.endereco i {
+    font-size: 1.8rem;
+    color: var(--laranja);
+}
+
+.endereco p {
+    margin-bottom: 0.3rem;
+}
+
+.ver-mapa-btn {
+    display: inline-block;
+    background-color: var(--laranja);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.ver-mapa-btn:hover {
+    background-color: #e07800;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(224, 120, 0, 0.3);
+}
+
+.mapa-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contato-info, .contato-form, .localizacao-info, .mapa-container {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.contato-info { animation-delay: 0.1s; }
+.contato-form { animation-delay: 0.3s; }
+.localizacao-info { animation-delay: 0.5s; }
+.mapa-container { animation-delay: 0.7s; }
+
+/* Responsividade */
+@media (max-width: 991px) {
+    .contato-header {
+        height: 250px;
+    }
+    
+    .contato-header h1 {
+        font-size: 3rem;
+    }
+    
+    .contato-info-wrapper {
+        flex-direction: column;
+    }
+    
+    .contato-info, .contato-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contato-header {
+        height: 200px;
+    }
+    
+    .contato-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contato-header::after {
+        height: 50px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .info-cards {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contato-header h1 {
+        font-size: 2rem;
+    }
+    
+    .contato-header p {
+        font-size: 1rem;
+    }
+    
+    .contato-info h2, .contato-form h2, .localizacao-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+    }
+    
+    .social-icons {
+        justify-content: space-between;
+    }
+}
