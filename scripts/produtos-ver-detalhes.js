@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Obtém o item de produto pai
             const produtoItem = this.closest('.produto-item');
+
+            if (produtoItem.classList.contains('detalhes-amostra')) {
+                //Retira a classe de amostra se já estiver aplicada
+                produtoItem.classList.remove('detalhes-amostra');
+            } else {
+                // Adiciona a classe de amostra para destacar o produto
+                produtoItem.classList.add('detalhes-amostra');
+            }
             
             // Verifica se já existe uma seção de detalhes
             let detalhesSection = produtoItem.querySelector('.produto-detalhes');

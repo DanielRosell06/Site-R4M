@@ -265,20 +265,6 @@
     }
 }
 
-/* Adicionar ao arquivo produtos-style.css */
-
-/* Ajuste para o container de pesquisa */
-.search-container {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 10;
-}
-
 /* Ajustes para responsividade em dispositivos médios */
 @media (max-width: 991px) {
     .produtos-header {
@@ -287,10 +273,6 @@
         padding-bottom: 80px; /* Espaço para o elemento diagonal */
     }
     
-    .search-container {
-        max-width: 80%;
-        margin-top: 1.5rem;
-    }
 }
 
 /* Ajustes para dispositivos pequenos/celulares */
@@ -305,12 +287,6 @@
         margin-bottom: 1rem;
     }
     
-    .search-container {
-        max-width: 90%;
-        order: 2; /* Garante que fique abaixo do texto */
-        margin-top: 1.5rem;
-    }
-    
     .search-box {
         width: 100%;
     }
@@ -322,13 +298,7 @@
         min-height: 300px;
         padding-bottom: 60px;
     }
-    
-    .search-container {
-        max-width: 100%;
-        padding: 0 15px;
-        margin-top: 1rem;
-    }
-    
+
     #search-input {
         padding: 12px 15px;
         font-size: 0.9rem;
@@ -388,9 +358,6 @@
     transition: all 0.3s ease;
 }
 
-#search-button:hover {
-    background-color: var(--preto);
-}
 
 /* Estilos para indicar resultados da pesquisa */
 .highlight {
@@ -426,12 +393,23 @@
     gap: 2rem;
     margin-bottom: 2rem;
 }
-
 .produtos-lista {
     flex: 2;
     display: flex;
-    flex-direction: column;
     gap: 1rem;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+}
+
+.produto-item {
+    flex: 1 1 calc(50% - 1rem); /* Cada item ocupa 50% do espaço menos o gap */
+    max-width: calc(50% - 1rem); /* Garante que não ultrapasse 50% */
+}
+
+@media (max-width: 1080px) {
+    .produto-item {
+        flex: 1 1 100%; /* Em telas menores, cada item ocupa 100% */
+        max-width: 100%;
+    }
 }
 
 .produtos-imagem {
@@ -464,7 +442,13 @@
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
     transform: all ease 0.3s;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    max-height: 120px;
+}
+
+.detalhes-amostra {
+    max-height: 10000px;
 }
 
 .produto-item:hover {
@@ -646,4 +630,364 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
+}
+
+/* Seção de Produtos Mais Vendidos */
+.mais-vendidos {
+    padding: 3rem 0;
+    background-color: #f9f9f9;
+    position: relative;
+    overflow: hidden;
+}
+
+.mais-vendidos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, transparent, var(--laranja), transparent);
+}
+
+.mais-vendidos-titulo {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.mais-vendidos-titulo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--preto);
+}
+
+.mais-vendidos-titulo span {
+    color: var(--laranja);
+    position: relative;
+}
+
+.mais-vendidos-titulo span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--laranja);
+    bottom: -5px;
+    left: 0;
+}
+
+.mais-vendidos-titulo p {
+    color: var(--cinza);
+    font-size: 1.1rem;
+}
+
+.mais-vendidos-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.mais-vendidos-slider {
+    display: flex;
+    overflow-x: scroll; /* Alterado de 'auto' para 'scroll' para forçar a barra sempre visível */
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+    padding: 1rem 0.5rem 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--laranja) #f1f1f1;
+}
+
+.produto-slide {
+    min-width: 280px;
+    flex: 0 0 280px;
+}
+.mais-vendidos-slider::-webkit-scrollbar {
+    height: 8px;
+    display: block; /* Força a exibição da barra */
+}
+
+.mais-vendidos-slider::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.mais-vendidos-slider::-webkit-scrollbar-thumb {
+    background: var(--laranja);
+    border-radius: 10px;
+}
+
+.mais-vendidos-slider::-webkit-scrollbar-thumb:hover {
+    background: #e06800;
+}
+
+/* Para IE e Edge */
+.mais-vendidos-slider {
+    -ms-overflow-style: scrollbar; /* Altera de 'none' para 'scrollbar' */
+}
+
+.produto-card-mv {
+    background: var(--branco);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid transparent;
+}
+
+.produto-card-mv:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    border-bottom: 3px solid var(--laranja);
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--laranja);
+    color: white;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.produto-card-mv img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.produto-card-mv:hover img {
+    transform: scale(1.08);
+}
+
+.produto-card-mv h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--preto);
+    font-weight: 600;
+}
+
+.produto-card-mv p {
+    color: var(--cinza);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+}
+
+.ver-produto-btn {
+    background-color: transparent;
+    color: var(--laranja);
+    padding: 8px 15px;
+    border: 1px solid var(--laranja);
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.ver-produto-btn:hover {
+    background-color: var(--laranja);
+    color: var(--branco);
+}
+
+/* Botões de navegação */
+.navegacao-slider {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid var(--cinza-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--laranja);
+    color: white;
+    border-color: var(--laranja);
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .mais-vendidos-container {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 991px) {
+    .mais-vendidos-titulo h2 {
+        font-size: 2.2rem;
+    }
+    
+    .produto-slide {
+        min-width: 250px;
+        flex: 0 0 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mais-vendidos {
+        padding: 2.5rem 0;
+    }
+    
+    .mais-vendidos-titulo h2 {
+        font-size: 2rem;
+    }
+    
+    .mais-vendidos-container {
+        padding: 0 20px;
+    }
+    
+    .produto-slide {
+        min-width: 220px;
+        flex: 0 0 220px;
+    }
+    
+    .produto-card-mv {
+        padding: 1.2rem;
+    }
+    
+    .produto-card-mv img {
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mais-vendidos-titulo h2 {
+        font-size: 1.8rem;
+    }
+    
+    .mais-vendidos-titulo p {
+        font-size: 1rem;
+    }
+    
+    .produto-slide {
+        min-width: 200px;
+        flex: 0 0 200px;
+    }
+    
+    .produto-card-mv {
+        padding: 1rem;
+    }
+    
+    .produto-card-mv img {
+        height: 120px;
+    }
+    
+    .ver-produto-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Adicione este CSS ao final do seu arquivo produtos-style.css */
+
+/* Efeito de destaque para os produtos */
+@keyframes destacarProduto {
+    0% { box-shadow: 0 0 0 rgba(255, 126, 0, 0); border-left: 3px solid transparent; }
+    20% { box-shadow: 0 0 20px rgba(255, 126, 0, 0.7); border-left: 3px solid var(--laranja); }
+    80% { box-shadow: 0 0 20px rgba(255, 126, 0, 0.7); border-left: 3px solid var(--laranja); }
+    100% { box-shadow: 0 0 0 rgba(255, 126, 0, 0); border-left: 3px solid transparent; }
+}
+
+.produto-destacado {
+    animation: destacarProduto 2s ease;
+}
+
+/* Estilo para a borda divisória após a seção de produtos mais vendidos */
+.mais-vendidos::after {
+    content: '';
+    display: block;
+    width: 90%;
+    max-width: 1200px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ddd, transparent);
+    margin: 3rem auto 0;
+}
+
+/* Ajuste para tornar a rolagem mais suave em dispositivos touch */
+@media (pointer: coarse) {
+    .mais-vendidos-slider {
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+    }
+    
+    .produto-slide {
+        scroll-snap-align: start;
+    }
+}
+
+.search-produtos {
+    width: 100vw;
+}
+
+.search-container {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.search-box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    max-width: 80vw;
+}
+
+#search-input {
+    color: black;
+    
+}
+
+#search-input::placeholder {
+    color: rgb(153, 153, 153);
+}
+
+.link-pdf-produtos {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: var(--cinza);
+}
+
+.link-pdf-produtos p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.link-pdf-produtos .pdf-link {
+    color: var(--laranja);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-pdf-produtos .pdf-link:hover {
+    color: rgb(136, 66, 0);
+    text-decoration: underline;
 }
