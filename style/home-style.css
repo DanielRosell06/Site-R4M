@@ -427,12 +427,10 @@ body {
 .sobre-imagem img {
     width: 100%;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 .sobre-imagem img:hover{
     transform: scale(1.05);
-    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 768px) {
@@ -855,4 +853,9 @@ blockquote::before {
         margin: 1rem 0;
         width: 100%;
     }
+}
+
+.textFoo a {
+    color: var(--laranja);
+    text-decoration: none;
 }

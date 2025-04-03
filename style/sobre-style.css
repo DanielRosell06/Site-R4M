@@ -1,0 +1,236 @@
+/* Definição de variáveis */
+  
+  /* Reset e configurações globais */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo do cabeçalho */
+  .empresa-header {
+    background: #131313;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 2rem 1rem;
+    color: white;
+  }
+
+  .empresa-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to right bottom, transparent 49%, var(--laranja) 50%);
+}
+  
+  .header-content {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .empresa-header h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  }
+  
+  .empresa-header h1 span {
+    color: var(--laranja);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .empresa-header h1 span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--laranja);
+    bottom: -5px;
+    left: 0;
+  }
+  
+  .empresa-header p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  }
+  
+  /* Divisor de scroll */
+  .scroll-divider {
+    height: 50px;
+    background: linear-gradient(to right, var(--branco), var(--cinza-claro), var(--branco));
+  }
+  
+  /* Conteúdo principal */
+  .empresa-content {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Títulos das seções */
+  .section-title {
+    font-size: 2.5rem;
+    color: var(--preto);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .section-title span {
+    color: var(--laranja);
+    margin-left: 8px;
+  }
+  
+  .section-title::after {
+    content: "";
+    flex-grow: 1;
+    height: 3px;
+    background: var(--cinza-claro);
+    margin-left: 20px;
+  }
+  
+  /* Seção de história e estrutura */
+  .empresa-history {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  
+  .history-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .history-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--cinza);
+    margin-bottom: 20px;
+  }
+  
+  .history-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+  
+  .history-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* Logo da empresa */
+  .empresa-logo {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  
+  .empresa-logo img {
+    max-width: 250px;
+  }
+  
+  /* Cards de valores */
+  .valores-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .valor-card {
+    background: var(--branco);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 30px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .valor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .valor-card h3 {
+    color: var(--laranja);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .valor-card p {
+    color: var(--cinza);
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  .valor-icon {
+    font-size: 2.5rem;
+    color: var(--laranja);
+    margin-bottom: 20px;
+  }
+  
+  /* Seção da equipe */
+  .equipe-section {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 3rem;
+  }
+  
+  .equipe-intro {
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  
+  .equipe-intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--cinza);
+  }
+
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .empresa-history {
+      flex-direction: column;
+    }
+    .history-image {
+      order: -1;
+    }
+    .section-title {
+      font-size: 2rem;
+    }
+    .empresa-header {
+      padding: 80px 0;
+    }
+  }
+  

@@ -593,6 +593,7 @@
 }
 
 .solicitar-btn {
+    display: flex;
     background-color: var(--laranja);
     color: white;
     border: none;
@@ -640,15 +641,6 @@
     overflow: hidden;
 }
 
-.mais-vendidos::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(to right, transparent, var(--laranja), transparent);
-}
 
 .mais-vendidos-titulo {
     text-align: center;

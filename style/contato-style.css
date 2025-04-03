@@ -435,3 +435,7 @@ input:focus, select:focus, textarea:focus {
         justify-content: space-between;
     }
 }
+
+.contato-info, .contato-form, .localizacao-info, .mapa-container {
+    animation: none;
+}
