@@ -96,23 +96,23 @@
     padding-bottom: 0.5rem;
     margin-bottom: 2.5rem;
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+
+.categoria-titulo span {
+    color: var(--laranja);
+    position: relative;
+    margin-left: 8px;
 }
 
 .categoria-titulo::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    content: "";
+    flex-grow: 1;
     height: 3px;
-    background: var(--laranja);
-    transition: width 0.3s ease;
-}
-
-.categoria:hover .categoria-titulo::after {
-    width: 60%;
-}
+    background:rgb(226, 226, 226);
+    margin-left: 20px;
+  }
 
 .produtos-grid {
     display: grid;
