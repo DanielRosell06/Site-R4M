@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="detalhes-col">
                         <h4>Modo de Uso</h4>
                         <p>Aplicar diretamente no disco de polimento em rotação moderada. Indicado para desbaste inicial e remoção de marcas profundas.</p>
-                        <button class="solicitar-btn">Solicitar Orçamento</button>
+                        <a href="contato.html" class="solicitar-btn">Solicitar Orçamento</a>
                     </div>
                 </div>
             `,
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="detalhes-col">
                         <h4>Modo de Uso</h4>
                         <p>Ideal para uso em máquinas automáticas. Aplicar com pressão constante para maior produtividade.</p>
-                        <button class="solicitar-btn">Solicitar Orçamento</button>
+                        <a href="contato.html" class="solicitar-btn">Solicitar Orçamento</a>
                     </div>
                 </div>
             `,
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="detalhes-col">
                         <h4>Informações Adicionais</h4>
                         <p>Para informações detalhadas sobre o produto ${nomeProduto}, entre em contato com nossa equipe de vendas.</p>
-                        <button  class="solicitar-btn">Solicitar Orçamento</button>
+                        <a href="contato.html" class="solicitar-btn">Solicitar Orçamento</a>
                     </div>
                 </div>
             `

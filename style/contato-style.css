@@ -9,7 +9,7 @@
     background: #131313;
     background-size: cover;
     background-position: center;
-    height: 300px;
+    height: 500px;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -85,7 +85,11 @@
 
 .contato-info, .contato-form {
     flex: 1;
-    min-width: 300px;
+    min-width: 250px;
+}
+
+.contato-form{
+    margin-left: 2rem;
 }
 
 .contato-info h2, .contato-form h2 {
@@ -369,7 +373,11 @@ input:focus, select:focus, textarea:focus {
     .contato-header {
         height: 250px;
     }
-    
+
+    .contato-form {
+        margin-left: 0;
+    }
+
     .contato-header h1 {
         font-size: 3rem;
     }

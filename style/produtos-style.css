@@ -444,7 +444,7 @@
     transform: all ease 0.3s;
     display: flex;
     flex-direction: column;
-    max-height: 120px;
+    max-height: 130px;
 }
 
 .detalhes-amostra {
@@ -990,4 +990,32 @@
 .link-pdf-produtos .pdf-link:hover {
     color: rgb(136, 66, 0);
     text-decoration: underline;
+}
+
+.btn-veja-todos-produtos {
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--branco);
+    background-color: var(--laranja);
+    border: none;
+    border-radius: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-veja-todos-produtos:hover {
+    background-color: rgb(136, 66, 0);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-veja-todos-produtos:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
