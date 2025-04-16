@@ -91,8 +91,14 @@
                 </div>
 
                 <div class="contato-form">
+                    <!-- Seção de Feedback -->
+                    <?php if (isset($_GET['status'])): ?>
+                    <div class="feedback <?php echo $_GET['status']; ?>">
+                        <?php echo ($_GET['status'] == 'sucesso') ? '✅ Mensagem enviada!' : '❌ Erro ao enviar.'; ?>
+                    </div>
+                    <?php endif; ?>
                     <h2 class="categoria-titulo">Envie sua <span>Mensagem</span></h2>
-                    <form id="formulario-contato">
+                    <form id="formulario-contato" method="POST" action="enviar.php">
                         <div class="form-group">
                             <label for="nome">Nome Completo</label>
                             <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
@@ -124,7 +130,7 @@
                         <div class="form-group">
                             <label for="mensagem">Mensagem</label>
                             <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem aqui"
-                                required style="resize: none;"></textarea>
+                                required></textarea>
                         </div>
 
                         <button type="submit" class="submit-btn">Enviar Mensagem</button>
