@@ -1,0 +1,107 @@
+/* Menu Mobile Styles */
+.menu-btn {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+        padding: 5px 10px;
+    }
+    
+    #menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 50%;
+        height: 100vh;
+        background-color: rgba(26, 26, 26, 0.9);
+        transition: right 0.3s ease;
+        z-index: 999;
+        padding: 70px 0 0 0;
+        overflow-y: auto;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    #menu.menu-open {
+        right: 0;
+    }
+    
+    #menu ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #menu ul li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    #menu ul li a {
+        font-size: 18px;
+        padding: 10px 20px;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    #menu ul li a:hover {
+        color: #ff6347; /* Cor laranja similar à utilizada no seu site */
+    }
+    
+    /* Quando o menu está aberto, escurecer o resto da página */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        display: none;
+    }
+    
+    .menu-overlay.active {
+        display: block;
+    }
+    
+    /* Estilos adicionais para desktop */
+    @media screen and (min-width: 769px) {
+        .menu-btn {
+            display: none;
+        }
+        
+        #menu {
+            position: static;
+            width: auto;
+            height: auto;
+            background-color: transparent;
+            padding: 0;
+            display: block;
+        }
+        
+        #menu ul {
+            flex-direction: row;
+        }
+        
+        #menu ul li {
+            border-bottom: none;
+            padding: 0;
+        }
+    }
+}
+
+.black-nav-button{
+    color: black;
+}

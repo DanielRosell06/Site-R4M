@@ -111,6 +111,11 @@ body {
     text-shadow: none;
 }
 
+#topo.scrolled #menu.menu-open ul li a {
+    color: #FFF;
+    text-shadow: none;
+}
+
 #menu ul li a:hover {
     color: var(--laranja);
 }
@@ -126,8 +131,8 @@ body {
     transition: width 0.3s ease;
 }
 
-#menu ul li a:hover::after {
-    width: 100%;
+#menu.menu-open ul li a::after {
+    content: '';
 }
 
 /* Banner */
@@ -804,45 +809,6 @@ h6 {
 
     .logo-text {
         font-size: 1.5rem;
-    }
-
-    #menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background-color: var(--branco);
-        transition: all 0.4s ease;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    #menu.active {
-        left: 0;
-    }
-
-    #menu ul {
-        flex-direction: column;
-        padding: 20px;
-        width: 100%;
-    }
-
-    #menu ul li {
-        margin: 10px 0;
-        width: 100%;
-    }
-
-    #menu ul li a {
-        padding: 10px 0;
-        display: block;
-        width: 100%;
-    }
-
-    .menu-toggle {
-        display: block;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--cinza);
     }
 
     .banner-content {
