@@ -54,6 +54,14 @@
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
   }
   
+  .header-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  }
+
   .empresa-header h1 span {
     color: var(--laranja);
     position: relative;
@@ -69,7 +77,19 @@
     bottom: -5px;
     left: 0;
   }
+
+  @media (max-width: 991px) {
+    .empresa-header h1 {
+      font-size: 3rem;
+    }
+  }
   
+  @media (max-width: 768px) {
+    .empresa-header h1 {
+      font-size: 2.5rem;
+    }
+  }
+
   .empresa-header p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -77,6 +97,17 @@
     margin: 0 auto;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   }
+
+  @media (max-width: 480px) {
+    .empresa-header h1 {
+      font-size: 2rem;
+    }
+
+    .empresa-header p {
+      font-size: 1rem;
+  }
+  }
+
   
   /* Divisor de scroll */
   .scroll-divider {

@@ -791,6 +791,10 @@ h6 {
     .banner-image {
         width: 35%;
     }
+
+    #banner {
+        height: 90vh;
+    }
 }
 
 @media screen and (max-width: 768px) {
