@@ -466,3 +466,11 @@ textarea:focus {
     color: var(--laranja);
     margin-left: 0px;
 }
+
+
+
+#mensagem-sucesso {
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+}

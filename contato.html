@@ -97,14 +97,8 @@
                 </div>
 
                 <div class="contato-form">
-                    <!-- Seção de Feedback -->
-                    <?php if (isset($_GET['status'])): ?>
-                    <div class="feedback <?php echo $_GET['status']; ?>">
-                        <?php echo ($_GET['status'] == 'sucesso') ? '✅ Mensagem enviada!' : '❌ Erro ao enviar.'; ?>
-                    </div>
-                    <?php endif; ?>
                     <h2 class="categoria-titulo">Envie sua <span>Mensagem</span></h2>
-                    <form id="formulario-contato">
+                    <form id="formulario-contato" action="https://formspree.io/f/meogdaeo" method="POST">
                         <div class="form-group">
                             <label for="nome">Nome Completo</label>
                             <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
@@ -138,6 +132,8 @@
                             <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem aqui"
                                 required style="resize: none;"></textarea>
                         </div>
+
+                        <div id="mensagem-sucesso"></div>
 
                         <button type="submit" class="submit-btn">Enviar Mensagem</button>
                     </form>
@@ -209,6 +205,41 @@
                 href="http://github.com/DanielRosell06">Github</a>
         </p>
     </div>
+
+    <script>
+        document.getElementById('formulario-contato').addEventListener('submit', function (e) {
+            e.preventDefault(); // Impede o redirecionamento
+
+            // Envia o formulário usando Fetch API
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Limpa os campos
+                        this.reset();
+
+                        // Mostra mensagem de sucesso
+                        const mensagemDiv = document.getElementById('mensagem-sucesso');
+                        mensagemDiv.innerHTML = 'Mensagem enviada com sucesso! Entraremos em contato com seu e-mail em breve.';
+                        mensagemDiv.style.color = 'green';
+                        mensagemDiv.style.marginBottom = '15px';
+
+                        // Opcional: remove a mensagem após alguns segundos
+                        setTimeout(() => {
+                            mensagemDiv.innerHTML = '';
+                        }, 15000);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+        });
+    </script>
 </body>
 
 </html>
