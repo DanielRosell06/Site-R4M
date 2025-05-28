@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <li>Código: 1.009.1</li>
                             <li>Tipo: Massa úmida profissional</li>
                             <li>Composição: Formulação para inox 304</li>
-                            <li>Aplicação: Indústria alimentícia</li>
+                            <li>Aplicação: Indústria em geral.</li>
                             <li>Característica: Atende normas sanitárias</li>
                         </ul>
                     </div>
