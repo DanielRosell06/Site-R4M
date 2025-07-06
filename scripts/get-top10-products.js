@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const ElementTop10 = document.getElementById("Top10");
 
     const Data = await fetchTop10Products();
-    console.log(Data)
 
     if (!ElementTop10) {
         console.error('Elemento com id "Top10" não encontrado no DOM.');
