@@ -24,8 +24,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const h2TituloCategoria = document.createElement('h2')
         h2TituloCategoria.className = 'categoria-titulo'
-        h2TituloCategoria.textContent = Data[i].titulo
+        const tituloOriginal = Data[i].titulo
+        const palavras = tituloOriginal.trim().split(' ')
+        if (palavras.length > 1) {
+            const ultimaPalavra = palavras.pop()
+            const tituloSemUltima = palavras.join(' ')
+
+            // Cria o conteúdo com <span> na última palavra
+            h2TituloCategoria.innerHTML = `${tituloSemUltima} <span>${ultimaPalavra}</span>`
+        } else {
+            h2TituloCategoria.textContent = tituloOriginal
+        }
         divCategoria.append(h2TituloCategoria)
+
 
         const divContainerProdutos = document.createElement('div')
         divContainerProdutos.className = 'produtos-container'
@@ -115,6 +126,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         categoriasElement.append(divCategoria)
     }
-
 
 })

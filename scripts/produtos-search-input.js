@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Função com parâmetro padrão adicionado
     function performSearch(searchType = 0) {
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const produtoItems = document.querySelectorAll('.produto-item');
+        const categorias = document.querySelectorAll('.categoria');
+        const produtoNaoEncontrado = document.querySelector('.produto-nao-encontrado');
         let searchTerm;
         if (searchType === 1) {
             searchTerm = "";
@@ -14,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             searchTerm = searchInput.value.toLowerCase().trim();
         }
-        
+
         let contagem = 0;
 
         if (searchTerm === '') {
@@ -34,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const titulo = item.querySelector('h3').textContent.toLowerCase();
                 const descricao = item.querySelector('p').textContent.toLowerCase();
                 const match = titulo.includes(searchTerm) || descricao.includes(searchTerm);
-                
+
                 item.style.display = match ? 'flex' : 'none';
                 if (match) {
                     temProdutosVisiveis = true;
@@ -63,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!slider || !prevBtn || !nextBtn || !slideElement) return;
 
-    const slideWidth = slideElement.offsetWidth + 
+    const slideWidth = slideElement.offsetWidth +
         parseInt(getComputedStyle(slideElement).marginRight);
 
     function scrollSlider(direction) {
@@ -79,32 +84,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Interação com produtos
     const verProdutoBtns = document.querySelectorAll('.ver-produto-btn');
-    
+
     verProdutoBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
             e.preventDefault();
             performSearch(1);
-    
+
             const produtoNome = this.closest('.produto-card-mv')
                 .querySelector('h3').textContent;
-    
+
             const produtoCorrespondente = Array.from(
                 document.querySelectorAll('.produto-item h3'))
                 .find(h3 => h3.textContent === produtoNome);
-    
+
             if (produtoCorrespondente) {
                 produtoCorrespondente.scrollIntoView({
                     behavior: 'smooth',
                     block: 'center'
                 });
-    
+
                 const produtoItem = produtoCorrespondente.closest('.produto-item');
                 produtoItem.classList.add('produto-destacado');
-    
+
                 setTimeout(() => {
                     produtoItem.classList.remove('produto-destacado');
                 }, 2000);
-    
+
                 // Modificação crítica aqui
                 const detalhesBtn = produtoItem.querySelector('.detalhes-btn');
                 if (detalhesBtn) {
