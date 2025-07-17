@@ -47,17 +47,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         h3.textContent = produto.titulo;
 
         const p = document.createElement('p');
-        // Corrige o tratamento da descrição
-        if (Array.isArray(produto.descricao)) {
-            p.textContent = produto.descricao[0];
-        } else {
-            try {
-                const descArr = JSON.parse(produto.descricao);
-                p.textContent = Array.isArray(descArr) ? descArr[0] : produto.descricao;
-            } catch {
-                p.textContent = produto.descricao;
-            }
-        }
+        p.textContent = produto.subTitulo;
+        
 
         const btn = document.createElement('a');
         btn.href = `#`;

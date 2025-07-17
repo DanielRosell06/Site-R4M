@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             h2TituloProduto.textContent = Data[i].produtos[j].titulo
             divInfoProduto.append(h2TituloProduto)
 
-            // const pSubtituloProduto = document.createElement('p')            NÃO TEM SUBTITULO NO SISTEMA
-            // pSubtituloProduto.textContent = Data[i].produtos[j].titulo
-            // divInfoProduto.append(pSubtituloProduto)
+            const pSubtituloProduto = document.createElement('p')
+            pSubtituloProduto.textContent = Data[i].produtos[j].subTitulo
+            divInfoProduto.append(pSubtituloProduto)
 
             const divDetalhesProduto = document.createElement('div')
             divDetalhesProduto.className = 'produto-detalhes'
