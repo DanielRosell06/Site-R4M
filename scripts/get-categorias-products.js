@@ -7,16 +7,62 @@ async function fetchCategorias() {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('Erro ao buscar os top 10 produtos:', error);
+        console.error('Erro ao buscar as categorias:', error); // Correção do console.error
         return null;
     }
 }
 
 
 document.addEventListener('DOMContentLoaded', async () => {
+    const categoriasElement = document.getElementById("categorias-produtos");
+
+    if (!categoriasElement) {
+        console.error('Elemento com id "categorias-produtos" não encontrado no DOM.');
+        return;
+    }
+
+    // Criar e estilizar o indicador de carregamento
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.id = 'loading-indicator';
+    loadingIndicator.innerHTML = '<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
+    loadingIndicator.style.cssText = `
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 200px; /* Ajustado para melhor visualização com pontos maiores */
+        color: #f97316; /* orange-500 */
+        font-size: 90px; /* Alterado para 90px */
+        font-weight: bold;
+        border-radius: 8px; /* Adicionado um pouco de arredondamento */
+    `;
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes dot-animation {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+        #loading-indicator .dot:nth-child(1) { animation: dot-animation 1.5s infinite; }
+        #loading-indicator .dot:nth-child(2) { animation: dot-animation 1.5s infinite 0.5s; }
+        #loading-indicator .dot:nth-child(3) { animation: dot-animation 1.5s infinite 1s; }
+    `;
+    document.head.appendChild(style);
+
+    categoriasElement.appendChild(loadingIndicator);
+
     const Data = await fetchCategorias();
-    console.log(Data)
-    const categoriasElement = document.getElementById("categorias-produtos")
+
+    // Remover o indicador de carregamento após o retorno do fetch
+    loadingIndicator.remove();
+
+    console.log(Data);
+
+    if (!Array.isArray(Data)) {
+        console.error('Dados inválidos recebidos para as categorias.');
+        return;
+    }
 
     for (let i = 1; i < Data.length; i++) {
         const divCategoria = document.createElement('div')

@@ -15,12 +15,45 @@ async function fetchTop10Products() {
 document.addEventListener('DOMContentLoaded', async () => {
     const ElementTop10 = document.getElementById("Top10");
 
-    const Data = await fetchTop10Products();
-
     if (!ElementTop10) {
         console.error('Elemento com id "Top10" não encontrado no DOM.');
         return;
     }
+
+    // Criar e estilizar o indicador de carregamento
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.id = 'loading-indicator';
+    loadingIndicator.innerHTML = '<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
+    loadingIndicator.style.cssText = `
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100px; /* Garante que o indicador apareça mesmo se o ElementTop10 estiver vazio */
+        color: #f97316; /* orange-500 */
+        font-size: 90px; /* Alterado de 2em para 24px */
+        font-weight: bold;
+    `;
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes dot-animation {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+        #loading-indicator .dot:nth-child(1) { animation: dot-animation 1.5s infinite; }
+        #loading-indicator .dot:nth-child(2) { animation: dot-animation 1.5s infinite 0.5s; }
+        #loading-indicator .dot:nth-child(3) { animation: dot-animation 1.5s infinite 1s; }
+    `;
+    document.head.appendChild(style);
+
+    ElementTop10.appendChild(loadingIndicator);
+
+    const Data = await fetchTop10Products();
+
+    // Remover o indicador de carregamento após o retorno do fetch
+    loadingIndicator.remove();
 
     if (!Array.isArray(Data)) {
         console.error('Dados inválidos recebidos para os produtos.');
@@ -48,7 +81,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const p = document.createElement('p');
         p.textContent = produto.subTitulo;
-        
 
         const btn = document.createElement('a');
         btn.href = `#`;
