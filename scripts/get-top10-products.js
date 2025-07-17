@@ -1,6 +1,6 @@
 async function fetchTop10Products() {
     try {
-        const response = await fetch('http://localhost:3000/api/public-route?tipo=top10');
+        const response = await fetch('https://sistema-r4-m.vercel.app/api/public-route?tipo=top10');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

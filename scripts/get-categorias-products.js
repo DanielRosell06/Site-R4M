@@ -1,66 +1,6 @@
-// <div class="categoria">
-// <h2 class="categoria-titulo"> </h2>
-// <div class="produtos-container">
-//     <div class="produtos-lista">
-//     <div class="produto-item detalhes-amostra">
-//         <div class="produto-head">
-//         <div class="produto-info">
-//             <h3>Polibril D577 (Branca)</h3>
-//             <p>Massa sólida para polimento em alumínio.</p>
-//         </div>
-//         <a href="#" class="detalhes-btn">Ver detalhes
-//             <i class="fa fa-chevron-down"></i>
-//         </a>
-//         </div>
-//         <div class="detalhes-grid">
-//         <div class="detalhes-col">
-//             <h4>Especificações técnicas</h4>
-//             <ul>
-//             <li>
-//                 <b>Código:</b> 1.020.0
-//             </li>
-//             <li>
-//                 <b>Tipo:</b> Massa úmida sólida
-//             </li>
-//             <li>
-//                 <b>Composição:</b> Formulação de alta aderência
-//             </li>
-//             <li>
-//                 <b>Aplicação:</b> Alumínio e similares
-//             </li>
-//             <li>
-//                 <b>Característica:</b> Médio poder de corte
-//             </li>
-//             </ul>
-//         </div>
-//         <div class="detalhes-col">
-//             <h4>Modo de Uso</h4>
-//             <p>Aplicar em disco de polimento com rotação constante para acabamento uniforme. </p>
-//             <a href="contato.html" class="solicitar-btn">Solicitar Orçamento</a>
-//         </div>
-//         </div>
-//         <div class="produto-detalhes" style="display: none;">
-//         <div class="detalhes-grid">
-//             <div class="detalhes-col">
-//             <h4>Especificações Técnicas</h4>
-//             <ul></ul>
-//             </div>
-//             <div class="detalhes-col">
-//             <h4>Modo de Uso</h4>
-//             <p>Aplicar em disco de polimento com rotação constante para acabamento uniforme.</p>
-//             <a href="contato.html" class="solicitar-btn">Solicitar Orçamento</a>
-//             </div>
-//         </div>
-//         </div>
-//     </div>
-//     </div>
-// </div>
-// </div>
-
-
 async function fetchCategorias() {
     try {
-        const response = await fetch('http://localhost:3000/api/public-route?tipo=categorias');
+        const response = await fetch('https://sistema-r4-m.vercel.app/api/public-route?tipo=categorias');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -162,8 +102,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             h4ModoDeUso.textContent = "Modo de Uso"
             detalhesGridColSecond.append(h4ModoDeUso)
 
-            const pModoDeUso = document.createElement('h4')
-            pModoDeUso.textContent = Data[i].produtos[j].descricao.modo_de_uso
+            const pModoDeUso = document.createElement('p')
+            pModoDeUso.textContent = Data[i].produtos[j].modo_de_uso
             detalhesGridColSecond.append(pModoDeUso)
 
             const solicitarBtn = document.createElement('a');
